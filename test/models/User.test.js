@@ -18,4 +18,13 @@ describe ("Creando prueba de unidad para Clase User" , () => {
         expect(user.getDateCreated).not.toBeUndefined()
         expect(user.getLastUpdated).not.toBeUndefined()
     });
+
+    test('Creando setters', () => {
+        const user = new User(1, "luan", "Luis", "Bio")
+        user.setUsername = "luandiru"
+        expect(user.username).toBe("luandiru")
+
+        user.setBio = "NoBio"
+        expect(user.bio).toBe("NoBio")
+    });
 })
