@@ -1,3 +1,4 @@
+const User = require('../../app/models/User');
 const UserService = require('./../../app/services/UserService');
 
 describe("Creando prueba de unidad para la clase UserService", () =>{
@@ -22,5 +23,16 @@ describe("Creando prueba de unidad para la clase UserService", () =>{
         const user = UserService.create(1,"luan","Luis")
         UserService.updateUserName(user, "luandiru")
         expect(user.username).toBe("luandiru")
+    });
+
+    test ('Creando un método estático getAllUsernames', () => {
+        const user1 = UserService.create(1,"luan","Luis")
+        const user2 = UserService.create(2,"juca","Juan")
+        const user3 = UserService.create(3,"juanma","Manuel")
+        const usernames = UserService.getAllUsernames([user1,user2,user3])
+        expect(usernames).toContain("luan")
+        expect(usernames).toContain("juca")
+        expect(usernames).toContain("juanma")
+
     });
 })
