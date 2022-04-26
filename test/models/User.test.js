@@ -10,4 +10,12 @@ describe ("Creando prueba de unidad para Clase User" , () => {
         expect(user.dateCreated).not.toBeUndefined()
         expect(user.lastUpdated).not.toBeUndefined()
     });
+
+    test('Crear getters', () => {
+        const user = new User(1, "luan", "Luis", "Bio")
+        expect(user.getUsername).toBe("luan")
+        expect(user.getBio).toBe("Bio")
+        expect(user.getDateCreated).not.toBeUndefined()
+        expect(user.getLastUpdated).not.toBeUndefined()
+    });
 })
