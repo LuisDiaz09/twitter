@@ -17,4 +17,10 @@ describe("Creando prueba de unidad para la clase UserService", () =>{
         expect(userInfo[2]).toBe("Luis")
         expect(userInfo[3]).toBe("Sin Bio")
     });
+
+    test('Creando un método estático updateUserName', () => {
+        const user = UserService.create(1,"luan","Luis")
+        UserService.updateUserName(user, "luandiru")
+        expect(user.username).toBe("luandiru")
+    });
 })
